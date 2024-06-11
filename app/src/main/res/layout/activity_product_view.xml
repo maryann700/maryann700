@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/background_color"
+        android:minHeight="?actionBarSize"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white">
+
+        <include layout="@layout/actionbar_layout" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.26"
+            android:background="#373B44"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="5dp">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:padding="5dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/txtBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:text="Back"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_selected_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_selected_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/round_corner_category"
+                android:gravity="center|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="7dp">
+                <!--CHANGE TO GONE-->
+                <TextView
+                    android:id="@+id/tv_selected_filter"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/iv_selected_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/dot_white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5.5">
+
+            <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+                android:id="@+id/hicvp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:icvp_center_page_scale_offset="30dp"
+                app:icvp_max_page_scale="0.8"
+                app:icvp_medium_scaled="true"
+                app:icvp_min_page_scale="0.5"
+                app:icvp_min_page_scale_offset="5dp"
+                app:icvp_scroll_duration="500" />
+
+            <com.darwindeveloper.wcviewpager.WCViewPagerIndicator
+                android:id="@+id/wcviewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="25dp"
+                app:indicatorSelectedColor="@color/progressbar_color"
+                app:indicatorsColor="@color/grey"
+                app:showNumbers="false" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.8"
+            android:gravity="center_horizontal"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.5"
+            android:gravity="center_horizontal"
+            android:text="QTY"
+            android:textColor="#2DCD8F"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="144dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1.2">
+
+            <TextView
+                android:id="@+id/tv_count_quantity"
+                android:layout_width="124dp"
+                android:layout_height="52dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_corner"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
+            <!--<RelativeLayout
+                android:id="@+id/rl_minus_quantity_pd"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/quantity_round_view">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="-"
+                    android:textColor="@android:color/white"
+                    android:textSize="26sp" />
+            </RelativeLayout>-->
+
+            <ImageView
+                android:id="@+id/rl_minus_quantity_pd"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/minus_shape" />
+
+          <!--  <RelativeLayout
+                android:id="@+id/rl_plus_quantity_pd"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/quantity_round_view">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </RelativeLayout>-->
+
+            <ImageView
+                android:id="@+id/rl_plus_quantity_pd"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/plus_shape" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:text="Available Quantity:"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_add_cart"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin"
+        android:background="@drawable/round_corner_gradient"
+        android:text="ADD TO CART"
+        android:textColor="@android:color/white" />
+</LinearLayout>

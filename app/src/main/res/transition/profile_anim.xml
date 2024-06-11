@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:duration="1000"
+    app:transitionOrdering="together">
+    <changeBounds>
+        <targets>
+            <target app:excludeId="@+id/seekround" />
+        </targets>
+    </changeBounds>
+    <fade
+        app:fadingMode="fade_in"
+        app:startDelay="200"></fade>
+</transitionSet>

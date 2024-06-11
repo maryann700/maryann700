@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="line">
+            <stroke
+                 android:width="5dp"
+                 android:color="@color/progressbar_color_bg" />
+         <!--   <gradient
+                android:angle="270"
+                android:endColor="@color/progressbar_color_bg"
+                android:startColor="@color/progressbar_color_bg" />-->
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <item>
+        <clip>
+            <shape android:shape="line">
+                  <stroke
+                      android:width="5dp"
+                      android:color="@color/progressbar_color" />
+               <!-- <gradient
+                    android:angle="270"
+                    android:endColor="@color/progressbar_color_dark"
+                    android:startColor="@color/progressbar_color" />-->
+                <corners android:radius="10dp" />
+                <!--<padding android:left="-5dp" />-->
+            </shape>
+        </clip>
+    </item>
+    <item>
+        <clip>
+            <shape android:shape="line">
+                <stroke
+                     android:width="5dp"
+                     android:color="@color/progressbar_color_dark" />
+               <!-- <gradient
+                    android:angle="270"
+                    android:endColor="@color/progressbar_color_dark"
+                    android:startColor="@color/progressbar_color" />-->
+                <!-- <padding android:left="-5dp" />-->
+                <corners android:radius="10dp" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

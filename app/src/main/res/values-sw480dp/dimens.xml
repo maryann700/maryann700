@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="logo_upper_space">30dp</dimen>
+    <dimen name="signin_edittext_height">38dp</dimen>
+    <dimen name="edittext_padding_left">16dp</dimen>
+    <dimen name="edittext_padding_between">16dp</dimen>
+    <dimen name="edittext_padding_between_signup">14dp</dimen>
+    <dimen name="button_margin">40dp</dimen>
+
+</resources>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_color"
+            app:theme="@style/ToolbarColoredBackArrow"
+            app:titleTextColor="@android:color/white">
+
+            <include layout="@layout/actionbar_homepage_layout" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/lnregion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#373B44"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Region : "
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txtRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#2DCE9C" />
+
+            <ImageView
+                android:id="@+id/ivSearchbtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/filter_icon" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlShops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:horizontalSpacing="15dp"
+                    android:numColumns="2"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSearchView"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#373B44"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!--CHANGE TO GONE-->
+                <Spinner
+                    android:id="@+id/spinnerRegion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/spinner_bg"
+                    android:spinnerMode="dropdown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/txtRangeMin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.20"
+                        android:gravity="right"
+                        android:text="0km"
+                        android:textColor="@color/cpb_white"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/seekbarRange"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtStartTime1"
+                        android:layout_weight="0.60"
+                        android:background="@null"
+                        android:max="50"
+                        android:progressDrawable="@drawable/seekbar_progressbar"
+                        android:thumb="@drawable/thumb_shape"
+                        android:thumbOffset="5dp" />
+
+                    <TextView
+                        android:id="@+id/txtRangeMax"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.20"
+                        android:text="0km"
+                        android:textColor="@color/cpb_white"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/signin_edittext_height"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/round_corner_gradient"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:text="SEARCH"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlmarket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/lnbtn"
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/imgprevious"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/previousarrow" />
+
+                <ImageView
+                    android:id="@+id/imgnext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/nextarrow" />
+
+            </LinearLayout>
+
+            <com.weedshop.utils.ObservableWebView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lnbtn"
+                android:background="@android:color/white"
+                android:overScrollMode="never"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

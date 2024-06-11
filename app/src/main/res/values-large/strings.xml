@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_secret_stripe">Bearer sk_test_KDesCgkR1uJySRkM4rf35Jj4</string>
+</resources>
